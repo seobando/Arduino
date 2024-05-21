@@ -1,4 +1,4 @@
-#include "trafficLight.cpp"
+#include <Arduino.h>
 
 void testControlTrafficLights(int pin_lights_1[], int pin_lights_2[]) {
 

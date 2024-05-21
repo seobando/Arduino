@@ -1,10 +1,8 @@
-#include "traffic.cpp"
-
 void testControlTraffic(int pin_lights_1[], int pin_lights_2[]) {
 
-  char traffic_states[] = { "HH", "HL", "LH", "LL" };
+  int traffic_states[] = { 1, 2, 3, 4 };
 
-  for (char traffic_state : traffic_states) {
+  for (int traffic_state : traffic_states) {
     controlTraffic(traffic_state, pin_lights_1, pin_lights_2);
   }
 }

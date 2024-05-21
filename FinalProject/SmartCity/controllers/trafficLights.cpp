@@ -1,4 +1,5 @@
-/*
+#include <Arduino.h>
+
 void controlTrafficLights(
   int delay_between_traffic_lights,
   int delay_between_lights,
@@ -24,4 +25,4 @@ void controlTrafficLights(
     changeTrafficLightStateByLightColor(pin_lights_1_color, 0, pin_lights_1);
     changeTrafficLightStateByLightColor(pin_lights_2_color, 0, pin_lights_2);
   };
-}*/
+}

@@ -1,5 +1,3 @@
-#include "actuators.cpp"
-
 void testChangeTrafficLightStateByLightColor(int pin_lights[]) {
   int delay_between_lights = 2000;
   for (char color : COLORS) {

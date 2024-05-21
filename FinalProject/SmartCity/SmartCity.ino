@@ -1,10 +1,18 @@
 #include "utils/config.h"
 #include "utils/const.cpp"
+
+#include "components/actuators.cpp"
 #include "components/testActuators.cpp"
 
-#include <Wire.h>  //Library required for I2C comms (LCD)
-#include <LiquidCrystal_I2C.h> //Library for LCD display via I2C
-#include <math.h>  //Mathematics library for pow function (CO2 computation)
+#include "controllers/trafficLights.cpp"
+#include "controllers/testTrafficLights.cpp"
+
+#include "controllers/traffic.cpp"
+#include "controllers/testTraffic.cpp"
+
+#include <Wire.h>               //Library required for I2C comms (LCD)
+#include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
+#include <math.h>               //Mathematics library for pow function (CO2 computation)
 
 //Library definitions
 LiquidCrystal_I2C lcd(0x27, 16, 4);  //Set the LCD address to 0x27 for a 16 chars and 4 line display
@@ -27,17 +35,19 @@ void test() {
   Serial.println("Test TrafficLight 1");
   displayMessage("Test TrafficLight 1", 2000);
   testChangeTrafficLightStateByLightColor(PIN_LIGHTS_1);
+  
   Serial.println("Test TrafficLight 2");
   displayMessage("Test TrafficLight 2", 2000);
   testChangeTrafficLightStateByLightColor(PIN_LIGHTS_2);
 
   //Test Controllers
-  /*
   Serial.println("Test Control TrafficLights");
+  displayMessage("Test Control TrafficLights", 2000);
   testControlTrafficLights(PIN_LIGHTS_1, PIN_LIGHTS_2);
+  
   Serial.println("Test Control Traffic");
+  displayMessage("Test Control Traffic", 2000);
   testControlTraffic(PIN_LIGHTS_1, PIN_LIGHTS_2);
-  */
 }
 
 /*
