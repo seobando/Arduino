@@ -102,7 +102,7 @@ void loop() {
     // Process the message
     String message = "Traffic Control: " + traffic_state;
     Serial.println(message);
-    displayMessage(message, 20000);
+    displayMessage(message, 2000);
     controlTraffic(traffic_state.toInt(), PIN_LIGHTS_1, PIN_LIGHTS_2);
   }
 
