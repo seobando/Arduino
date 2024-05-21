@@ -50,7 +50,7 @@ void test() {
   testControlTraffic(PIN_LIGHTS_1, PIN_LIGHTS_2);
 
   Serial.println("End test");
-  displayMessage("End test", 2000);  
+  displayMessage("End test", 2000);
 }
 
 void setup() {
@@ -98,18 +98,12 @@ void loop() {
 
   if (Serial.available() > 0) {
     // Read incoming message
-    String traffic_state = Serial.readStringUntil('\n');
-
+    String traffic_state = Serial.readStringUntil("\r");
     // Process the message
     String message = "Traffic Control: " + traffic_state;
     Serial.println(message);
     displayMessage(message, 20000);
     controlTraffic(traffic_state.toInt(), PIN_LIGHTS_1, PIN_LIGHTS_2);
-
-  } else {
-    String message = "Default Traffic: 4";
-    Serial.println(message);
-    displayMessage(message, 20000);
-    controlTraffic(4, PIN_LIGHTS_1, PIN_LIGHTS_2);
   }
+
 }
