@@ -17,7 +17,7 @@
 //Library definitions
 LiquidCrystal_I2C lcd(0x27, 16, 4);  //Set the LCD address to 0x27 for a 16 chars and 4 line display
 
-void displayMessage(const char* message, int delay_time) {
+void displayMessage(String message, int delay_time) {
   Serial.println("Display shows: " + String(message));
   lcd.setCursor(0, 0);
   lcd.print(message);
@@ -25,17 +25,17 @@ void displayMessage(const char* message, int delay_time) {
   lcd.clear();
 }
 
-
 void test() {
 
   //Test Display
-  displayMessage("SmartCity is ON!", 2000);
+  Serial.println("Start test");
+  displayMessage("Start test", 2000);
 
   //Test Actuators
   Serial.println("Test TrafficLight 1");
   displayMessage("Test TrafficLight 1", 2000);
   testChangeTrafficLightStateByLightColor(PIN_LIGHTS_1);
-  
+
   Serial.println("Test TrafficLight 2");
   displayMessage("Test TrafficLight 2", 2000);
   testChangeTrafficLightStateByLightColor(PIN_LIGHTS_2);
@@ -44,19 +44,14 @@ void test() {
   Serial.println("Test Control TrafficLights");
   displayMessage("Test Control TrafficLights", 2000);
   testControlTrafficLights(PIN_LIGHTS_1, PIN_LIGHTS_2);
-  
+
   Serial.println("Test Control Traffic");
   displayMessage("Test Control Traffic", 2000);
   testControlTraffic(PIN_LIGHTS_1, PIN_LIGHTS_2);
+
+  Serial.println("End test");
+  displayMessage("End test", 2000);  
 }
-
-/*
-void main(){
-    
-    char traffic_state = getMessage();
-    controlTraffic(traffic_state, PIN_LIGHTS_1, PIN_LIGHTS_2) 
-
-}*/
 
 void setup() {
   // Initialize serial communication
@@ -101,6 +96,20 @@ void setup() {
 
 void loop() {
 
-  // Run main
-  //main();
+  if (Serial.available() > 0) {
+    // Read incoming message
+    String traffic_state = Serial.readStringUntil('\n');
+
+    // Process the message
+    String message = "Traffic Control: " + traffic_state;
+    Serial.println(message);
+    displayMessage(message, 20000);
+    controlTraffic(traffic_state.toInt(), PIN_LIGHTS_1, PIN_LIGHTS_2);
+
+  } else {
+    String message = "Default Traffic: 4";
+    Serial.println(message);
+    displayMessage(message, 20000);
+    controlTraffic(4, PIN_LIGHTS_1, PIN_LIGHTS_2);
+  }
 }
