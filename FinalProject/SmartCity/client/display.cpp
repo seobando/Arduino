@@ -1,4 +1,3 @@
-/*
 #include <Wire.h>
 #include <Arduino.h>
 #include "libraries/LiquidCrystal/src/LiquidCrystal.h"
@@ -11,4 +10,3 @@ void displayMessage(char message) {
   delay(2000);
   lcd.clear();
 }
-*/
