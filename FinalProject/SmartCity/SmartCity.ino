@@ -3,8 +3,7 @@
 #include "components/testActuators.cpp"
 
 #include <Wire.h>  //Library required for I2C comms (LCD)
-//#include "libraries/LiquidCrystal-I2C/LiquidCrystal_I2C.h" //Library for LCD display via I2C
-#include <LiquidCrystal_I2C.h>
+#include <LiquidCrystal_I2C.h> //Library for LCD display via I2C
 #include <math.h>  //Mathematics library for pow function (CO2 computation)
 
 //Library definitions
