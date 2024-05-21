@@ -1,8 +1,31 @@
-#include "config.h"
-#include "const.cpp"
-#include "main.cpp"
-#include "test.cpp"
+#include "utils/config.h"
+#include "utils/const.cpp"
+#include "components/testActuators.cpp"
 
+void test(){
+
+  //Test Actuators
+  Serial.println("Test TrafficLight 1");
+  testChangeTrafficLightStateByLightColor(PIN_LIGHTS_1);
+  Serial.println("Test TrafficLight 2");
+  testChangeTrafficLightStateByLightColor(PIN_LIGHTS_2);
+
+  //Test Controllers
+  /*
+  Serial.println("Test Control TrafficLights");
+  testControlTrafficLights(PIN_LIGHTS_1, PIN_LIGHTS_2);
+  Serial.println("Test Control Traffic");
+  testControlTraffic(PIN_LIGHTS_1, PIN_LIGHTS_2);
+  */
+}
+
+/*
+void main(){
+    
+    char traffic_state = getMessage();
+    controlTraffic(traffic_state, PIN_LIGHTS_1, PIN_LIGHTS_2) 
+
+}*/
 
 void setup() {
   // Initialize serial communication
@@ -45,7 +68,7 @@ void loop() {
   test();
 
   // Run main
-  main();
+  //main();
 
 
 }

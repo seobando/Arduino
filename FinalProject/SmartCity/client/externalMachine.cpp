@@ -1,3 +1,4 @@
+/*
 char getMessage() {
   char message = "empty";
 
@@ -7,3 +8,4 @@ char getMessage() {
 
   return message
 }
+*/

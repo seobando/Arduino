@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 void changeTrafficLightStateByPinValue(int pin, int state) {
   if (state) {
     digitalWrite(pin, HIGH);

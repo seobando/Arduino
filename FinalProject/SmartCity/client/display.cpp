@@ -1,5 +1,8 @@
-#include <Wire.h>               //Library required for I2C comms (LCD)
-#include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
+/*
+#include <Wire.h>
+#include <Arduino.h>
+#include "libraries/LiquidCrystal/src/LiquidCrystal.h"
+
 
 void displayMessage(char message) {
   Serial.println("Display shows: " + message);
@@ -8,3 +11,4 @@ void displayMessage(char message) {
   delay(2000);
   lcd.clear();
 }
+*/
