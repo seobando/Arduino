@@ -1,12 +1,14 @@
 #include "SmartCity/utils/config.h"
 #include "utils/const.cpp"
 
+// Components
 #include "SmartCity/components/actuators.cpp"
-
+// Controllers
 #include "SmartCity/controllers/trafficLights.cpp"
-
 #include "SmartCity/controllers/traffic.cpp"
-
+#include "SmartCity/controllers/alerts.cpp"
+#include "SmartCity/controllers/streetLight.cpp"
+// Libraries
 #include <Wire.h>               //Library required for I2C comms (LCD)
 #include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
 #include <math.h>               //Mathematics library for pow function (CO2 computation)
@@ -20,6 +22,12 @@ void displayMessage(String message, int delay_time) {
   lcd.print(message);
   delay(delay_time);
   lcd.clear();
+}
+
+void runAlerts(){
+  controlAlertPolution();
+  controlAlertTrafficJam();
+  controlAlertTrafficLightStop();
 }
 
 void setup() {
@@ -71,5 +79,8 @@ void loop() {
     displayMessage(message, 2000);
     controlTraffic(traffic_state.toInt(), PIN_LIGHTS_1, PIN_LIGHTS_2);
   }
+
+  runAlerts();
+  controlStreetLight(0, 20);
 
 }

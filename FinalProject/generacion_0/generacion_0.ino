@@ -1,24 +1,20 @@
 #include "generacion_1/generacion_2/SmartCity/utils/config.h"
 #include "generacion_1/generacion_2/SmartCity/utils/const.cpp"
-
+// Components
 #include "generacion_1/generacion_2/SmartCity/components/actuators.cpp"
 #include "generacion_1/generacion_2/SmartCity/components/testActuators.cpp"
-
 #include "generacion_1/generacion_2/SmartCity/components/sensors.cpp"
 #include "generacion_1/generacion_2/SmartCity/components/testSensors.cpp"
-
+// Controllers
 #include "generacion_1/generacion_2/SmartCity/controllers/trafficLights.cpp"
 #include "generacion_1/generacion_2/SmartCity/controllers/testTrafficLights.cpp"
-
 #include "generacion_1/generacion_2/SmartCity/controllers/traffic.cpp"
 #include "generacion_1/generacion_2/SmartCity/controllers/testTraffic.cpp"
-
 #include "generacion_1/generacion_2/SmartCity/controllers/alerts.cpp"
 #include "generacion_1/generacion_2/SmartCity/controllers/testAlerts.cpp"
-
 #include "generacion_1/generacion_2/SmartCity/controllers/streetLight.cpp"
 #include "generacion_1/generacion_2/SmartCity/controllers/testStreetLight.cpp"
-
+// Libraries
 #include <Wire.h>               //Library required for I2C comms (LCD)
 #include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
 #include <math.h>               //Mathematics library for pow function (CO2 computation)

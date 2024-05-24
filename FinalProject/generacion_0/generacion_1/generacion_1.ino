@@ -1,7 +1,12 @@
 #include "generacion_2/SmartCity/utils/config.h"
 #include "generacion_2/SmartCity/utils/const.cpp"
 #include "generacion_2/SmartCity/client/sendData.cpp"
-
+// Controllers
+#include "generacion_1/generacion_2/SmartCity/controllers/alerts.cpp"
+#include "generacion_1/generacion_2/SmartCity/controllers/testAlerts.cpp"
+#include "generacion_1/generacion_2/SmartCity/controllers/streetLight.cpp"
+#include "generacion_1/generacion_2/SmartCity/controllers/testStreetLight.cpp"
+// Libraries
 #include <Wire.h>               //Library required for I2C comms (LCD)
 #include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
 #include <math.h>               //Mathematics library for pow function (CO2 computation)
@@ -15,6 +20,12 @@ void displayMessage(String message, int delay_time) {
   lcd.print(message);
   delay(delay_time);
   lcd.clear();
+}
+
+void runAlerts(){
+  controlAlertPolution();
+  controlAlertTrafficJam();
+  controlAlertTrafficLightStop();
 }
 
 void setup() {
@@ -71,5 +82,8 @@ void loop() {
     // Send metrics
     POST(1.0, 2.0, 3.0);
   }
+
+  runAlerts();
+  controlStreetLight(0, 20);
 
 }
