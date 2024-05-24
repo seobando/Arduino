@@ -30,8 +30,8 @@ void testChangeTrafficLightStateByLightColor(int pin_light_sensors[], int pin_bu
   CNY5 31 //Infrared sensor 5 in traffic light 2 connected in pin 31
   CNY6 30 //Infrared sensor 6 in traffic light 2 connected in pin 30
  */
-  for (int pin_light_sensor : pin_light_sensors) {
-    bool is_anything_there = validateProximity(pin_light_sensor);
+  for (int pin_proximity_sensor : pin_proximity_sensors) {
+    bool is_anything_there = validateProximity(pin_proximity_sensor);
     System.println("Checking sensor proximity: " + String(is_anything_there));
   }
 }

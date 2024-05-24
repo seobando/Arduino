@@ -13,6 +13,12 @@
 #include "generacion_1/generacion_2/SmartCity/controllers/traffic.cpp"
 #include "generacion_1/generacion_2/SmartCity/controllers/testTraffic.cpp"
 
+#include "generacion_1/generacion_2/SmartCity/controllers/alerts.cpp"
+#include "generacion_1/generacion_2/SmartCity/controllers/testAlerts.cpp"
+
+#include "generacion_1/generacion_2/SmartCity/controllers/streetLight.cpp"
+#include "generacion_1/generacion_2/SmartCity/controllers/testStreetLight.cpp"
+
 #include <Wire.h>               //Library required for I2C comms (LCD)
 #include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
 #include <math.h>               //Mathematics library for pow function (CO2 computation)
@@ -56,6 +62,14 @@ void test() {
   Serial.println("Testing Control Traffic");
   displayMessage("Testing Control Traffic", 2000);
   testControlTraffic(PIN_LIGHTS_1, PIN_LIGHTS_2);
+
+  Serial.println("Testing Control alerts");
+  displayMessage("Testing Control alerts", 2000);
+  testControlAlerts()
+
+  Serial.println("Testing Street lights");
+  displayMessage("Testing Street lights", 2000);
+  testControlStreetLights()
 
   Serial.println("End tests");
   displayMessage("End tests", 2000);
