@@ -1,11 +1,6 @@
 #include "generacion_2/SmartCity/utils/config.h"
 #include "generacion_2/SmartCity/utils/const.cpp"
-
-#include "generacion_2/SmartCity/components/actuators.cpp"
-
-#include "generacion_2/SmartCity/controllers/trafficLights.cpp"
-
-#include "generacion_2/SmartCity/controllers/traffic.cpp"
+#include "generacion_2/SmartCity/client/sendData.cpp"
 
 #include <Wire.h>               //Library required for I2C comms (LCD)
 #include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
@@ -59,20 +54,22 @@ void setup() {
   lcd.init();       //Start communications with LCD display
   lcd.backlight();  //Turn on LCD backlight
 
-  // Run tests
-  test();
+  // Comunicación
+  //Serial.begin(115200);
+  Serial.begin(9600);
+  WiFiInit(); // Iniciando la conexión WIFI
 }
 
 void loop() {
 
   if (Serial.available() > 0) {
     // Read incoming message
-    String traffic_state = Serial.readStringUntil("\r");
+    String cmd = Serial.readStringUntil("\r");
     // Process the message
-    String message = "Traffic Control: " + traffic_state;
-    Serial.println(message);
-    displayMessage(message, 2000);
-    controlTraffic(traffic_state.toInt(), PIN_LIGHTS_1, PIN_LIGHTS_2);
+    String message = "Command: " + cmd;
+
+    // Send metrics
+    POST(1.0, 2.0, 3.0);
   }
 
 }
