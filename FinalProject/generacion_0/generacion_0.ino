@@ -4,6 +4,9 @@
 #include "generacion_1/generacion_2/SmartCity/components/actuators.cpp"
 #include "generacion_1/generacion_2/SmartCity/components/testActuators.cpp"
 
+#include "generacion_1/generacion_2/SmartCity/components/sensors.cpp"
+#include "generacion_1/generacion_2/SmartCity/components/testSensors.cpp"
+
 #include "generacion_1/generacion_2/SmartCity/controllers/trafficLights.cpp"
 #include "generacion_1/generacion_2/SmartCity/controllers/testTrafficLights.cpp"
 
@@ -28,29 +31,34 @@ void displayMessage(String message, int delay_time) {
 void test() {
 
   //Test Display
-  Serial.println("Start test");
-  displayMessage("Start test", 2000);
+  Serial.println("Start tests");
+  displayMessage("Start tests", 2000);
 
   //Test Actuators
-  Serial.println("Test TrafficLight 1");
-  displayMessage("Test TrafficLight 1", 2000);
+  Serial.println("Testing TrafficLight 1");
+  displayMessage("Testing TrafficLight 1", 2000);
   testChangeTrafficLightStateByLightColor(PIN_LIGHTS_1);
 
-  Serial.println("Test TrafficLight 2");
-  displayMessage("Test TrafficLight 2", 2000);
+  Serial.println("Testing TrafficLight 2");
+  displayMessage("Testing TrafficLight 2", 2000);
   testChangeTrafficLightStateByLightColor(PIN_LIGHTS_2);
 
+  //Test Sensors
+  Serial.println("Testing Sensors");
+  displayMessage("Testing Sensors", 2000);  
+  testChangeTrafficLightStateByLightColor([1,2], [37,36],3, [35,34,33,32,31,30])
+
   //Test Controllers
-  Serial.println("Test Control TrafficLights");
-  displayMessage("Test Control TrafficLights", 2000);
+  Serial.println("Testing Control TrafficLights");
+  displayMessage("Testing Control TrafficLights", 2000);
   testControlTrafficLights(PIN_LIGHTS_1, PIN_LIGHTS_2);
 
-  Serial.println("Test Control Traffic");
-  displayMessage("Test Control Traffic", 2000);
+  Serial.println("Testing Control Traffic");
+  displayMessage("Testing Control Traffic", 2000);
   testControlTraffic(PIN_LIGHTS_1, PIN_LIGHTS_2);
 
-  Serial.println("End test");
-  displayMessage("End test", 2000);
+  Serial.println("End tests");
+  displayMessage("End tests", 2000);
 }
 
 void setup() {

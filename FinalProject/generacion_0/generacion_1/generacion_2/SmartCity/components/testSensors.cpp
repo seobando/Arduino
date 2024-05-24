@@ -6,7 +6,7 @@ void testChangeTrafficLightStateByLightColor(int pin_light_sensors[], int pin_bu
   */
   for (int pin_light_sensor : pin_light_sensors) {
     double light_measure = measureLight(pin_light_sensor);
-    System.println("Checking light measure: " + String(light_measure);
+    System.println("Checking light measure: " + String(light_measure));
   }
 
   /*
@@ -15,10 +15,10 @@ void testChangeTrafficLightStateByLightColor(int pin_light_sensors[], int pin_bu
   */
   for (int pin_button : pin_buttons) {
     bool is_button_on = validateButtons(pin_button);
-    System.println("Checking buttons: " + String(is_button_on);
+    System.println("Checking buttons: " + String(is_button_on));
   }
-  
-  //CO2 sensor connected in pin A3
+
+  //CO2 sensor connected in pin 3
   double co2 = measureCO2(co2);
   System.println("Checking CO2: " + String(co2));
 
@@ -31,8 +31,7 @@ void testChangeTrafficLightStateByLightColor(int pin_light_sensors[], int pin_bu
   CNY6 30 //Infrared sensor 6 in traffic light 2 connected in pin 30
  */
   for (int pin_light_sensor : pin_light_sensors) {
-    bool is_anything_there = validateProximity(pin);
+    bool is_anything_there = validateProximity(pin_light_sensor);
     System.println("Checking sensor proximity: " + String(is_anything_there));
   }
-
 }
