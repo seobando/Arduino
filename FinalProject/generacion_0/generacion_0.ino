@@ -1,14 +1,14 @@
-#include "utils/config.h"
-#include "utils/const.cpp"
+#include "generacion_1/generacion_2/SmartCity/utils/config.h"
+#include "generacion_1/generacion_2/SmartCity/utils/const.cpp"
 
-#include "components/actuators.cpp"
-#include "components/testActuators.cpp"
+#include "generacion_1/generacion_2/SmartCity/components/actuators.cpp"
+#include "generacion_1/generacion_2/SmartCity/components/testActuators.cpp"
 
-#include "controllers/trafficLights.cpp"
-#include "controllers/testTrafficLights.cpp"
+#include "generacion_1/generacion_2/SmartCity/controllers/trafficLights.cpp"
+#include "generacion_1/generacion_2/SmartCity/controllers/testTrafficLights.cpp"
 
-#include "controllers/traffic.cpp"
-#include "controllers/testTraffic.cpp"
+#include "generacion_1/generacion_2/SmartCity/controllers/traffic.cpp"
+#include "generacion_1/generacion_2/SmartCity/controllers/testTraffic.cpp"
 
 #include <Wire.h>               //Library required for I2C comms (LCD)
 #include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
@@ -95,15 +95,5 @@ void setup() {
 }
 
 void loop() {
-
-  if (Serial.available() > 0) {
-    // Read incoming message
-    String traffic_state = Serial.readStringUntil("\r");
-    // Process the message
-    String message = "Traffic Control: " + traffic_state;
-    Serial.println(message);
-    displayMessage(message, 2000);
-    controlTraffic(traffic_state.toInt(), PIN_LIGHTS_1, PIN_LIGHTS_2);
-  }
 
 }

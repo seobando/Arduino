@@ -2,13 +2,13 @@
 #include "utils/const.cpp"
 
 #include "components/actuators.cpp"
-#include "components/testActuators.cpp"
+//#include "components/testActuators.cpp"
 
 #include "controllers/trafficLights.cpp"
-#include "controllers/testTrafficLights.cpp"
+//#include "controllers/testTrafficLights.cpp"
 
 #include "controllers/traffic.cpp"
-#include "controllers/testTraffic.cpp"
+//#include "controllers/testTraffic.cpp"
 
 #include <Wire.h>               //Library required for I2C comms (LCD)
 #include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
@@ -25,6 +25,7 @@ void displayMessage(String message, int delay_time) {
   lcd.clear();
 }
 
+/*
 void test() {
 
   //Test Display
@@ -52,6 +53,7 @@ void test() {
   Serial.println("End test");
   displayMessage("End test", 2000);
 }
+*/
 
 void setup() {
   // Initialize serial communication
@@ -91,7 +93,7 @@ void setup() {
   lcd.backlight();  //Turn on LCD backlight
 
   // Run tests
-  test();
+  //test();
 }
 
 void loop() {

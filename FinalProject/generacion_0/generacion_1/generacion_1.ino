@@ -1,14 +1,11 @@
-#include "utils/config.h"
-#include "utils/const.cpp"
+#include "generacion_2/SmartCity/utils/config.h"
+#include "generacion_2/SmartCity/utils/const.cpp"
 
-#include "components/actuators.cpp"
-#include "components/testActuators.cpp"
+#include "generacion_2/SmartCity/components/actuators.cpp"
 
-#include "controllers/trafficLights.cpp"
-#include "controllers/testTrafficLights.cpp"
+#include "generacion_2/SmartCity/controllers/trafficLights.cpp"
 
-#include "controllers/traffic.cpp"
-#include "controllers/testTraffic.cpp"
+#include "generacion_2/SmartCity/controllers/traffic.cpp"
 
 #include <Wire.h>               //Library required for I2C comms (LCD)
 #include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
@@ -23,34 +20,6 @@ void displayMessage(String message, int delay_time) {
   lcd.print(message);
   delay(delay_time);
   lcd.clear();
-}
-
-void test() {
-
-  //Test Display
-  Serial.println("Start test");
-  displayMessage("Start test", 2000);
-
-  //Test Actuators
-  Serial.println("Test TrafficLight 1");
-  displayMessage("Test TrafficLight 1", 2000);
-  testChangeTrafficLightStateByLightColor(PIN_LIGHTS_1);
-
-  Serial.println("Test TrafficLight 2");
-  displayMessage("Test TrafficLight 2", 2000);
-  testChangeTrafficLightStateByLightColor(PIN_LIGHTS_2);
-
-  //Test Controllers
-  Serial.println("Test Control TrafficLights");
-  displayMessage("Test Control TrafficLights", 2000);
-  testControlTrafficLights(PIN_LIGHTS_1, PIN_LIGHTS_2);
-
-  Serial.println("Test Control Traffic");
-  displayMessage("Test Control Traffic", 2000);
-  testControlTraffic(PIN_LIGHTS_1, PIN_LIGHTS_2);
-
-  Serial.println("End test");
-  displayMessage("End test", 2000);
 }
 
 void setup() {
