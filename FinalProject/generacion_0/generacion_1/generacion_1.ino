@@ -74,6 +74,7 @@ void setup() {
 
 void loop() {
 
+  /*
   if (Serial.available() > 0) {
     // Read incoming message
     String cmd = Serial.readStringUntil("\r");
@@ -82,9 +83,10 @@ void loop() {
 
     // Send metrics
     POST(1.0, 2.0, 3.0);
-  }
+  }*/
 
   runAlerts();
   controlStreetLight(0, 20);
+  controlTrafficLights(6000, 2000, PIN_LIGHTS_1, PIN_LIGHTS_2);
 
 }
