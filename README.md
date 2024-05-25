@@ -8,13 +8,15 @@ El proyecto busca darle funcionalidades a una maqueta que simula una ciudad inte
 
 ## Objetivos:
 
-El proyecto esta conformado por 3 retos relacionados con los niveles de complejida y estrategia asociados a sistemas autoadaptables, clasificados por generaciones que van de la 0 a la 2, para el alcance de este proyecto, como se describe a continuación:
+El proyecto esta conformado por 3 retos relacionados con los niveles de complejida y estrategia asociados a sistemas autoadaptables.
+
+ El alcance de este proyecto cubre las generaciones que van de la 0 a la 2, como se describe a continuación:
 
 1. **Generación 0**: Sistemas regulados por control de lazo cerrado cuyos setpoints son predeterminados. No pueden gestionar cambios durante su operación. Su funcionalidad y arquitectura no cambian y no optimizan su comportamiento. Ejemplo: un Sistema de iluminación con sensores tradicional.
 
 2. **Generación 1**: Tienen sistemas de control de lazo cerrado y pueden modificar sus setpoints de acuerdo a las condiciones del entorno (auto-ajuste y conciencia del contexto). Los procesos de adaptación los llevan a cabo a través de cambios en los modos de operación del sistema (SOM). Esto les permite una operación más eficiente.
 
-3, **Generación 2**: Tienen autoconcienciencia y autoadaptación. Entiende su rol en un sistema de sistemas. Aprende de su propia experiencia y optimiza su comportamiento de acuerdo a ello. La capacidad de autoadaptación le permite cambiar sus settings e incluso introducir cambios estructurales y operacionales en el sistema.
+3. **Generación 2**: Tienen autoconcienciencia y autoadaptación. Entiende su rol en un sistema de sistemas. Aprende de su propia experiencia y optimiza su comportamiento de acuerdo a ello. La capacidad de autoadaptación le permite cambiar sus settings e incluso introducir cambios estructurales y operacionales en el sistema.
 
 ## Estructura del Proyecto:
 
@@ -25,7 +27,7 @@ La aproximación para darle solución a los retos esta inspirada en un diseño m
 3) Controllers: se encarga de utilizar y controlar los sensores y actuadores.
 4) Utils: provee las constantes y el mapeo de los pines que envian y reciben señales de cada elemento de la maqueta.
 
-La ejecución se realiza sobre Arduino en los archivos .ino llamando a las funcionalidades que atienden cada generación.
+La ejecución se realiza sobre Arduino en los archivos .ino.
 
 ## Casos de uso identificados:
 
@@ -40,5 +42,28 @@ Se usaron los elementos de la maqueta para atender dichos tipos de caso de uso d
 - Botones laterales de los semáforos: simulan abilitación del paro del tráfico cuándo hay personas con discapcidad visual que necesitan pasar la calle.
 - Sensor de CO2: dependiendo de un límite alerta sobre el nivel de contaminación del aire.
 - Sensor de próximidad: alerta sobre el estancamiento del tráfico cuando un cuerpo se aproxima a uno de los sensores.
+
+## Comunicaciones:
+
+Las comunicaciones entre Arduino y la máquina o computador conectado via USB, se gestionan por generación de la siguiente manera:
+
+- Generación 0: 
+
+No aplica, debido a que es solo pruebas de las funcionalidades.
+
+- Generación 1: 
+
+Se trata de una comunicación de Arduino hacia la máquina o computador, para facilitar la salida de los mensajes en Arduino hacia la red, como se explica a continuación:
+
+Arduino envia menajes de alerta y a tráves de python con la libreria Flask, se publican en el localhost las alertas. La carpeta "MonitorAlerts" contiene la lógica de python.
+
+- Generación2: 
+
+Consiste en la comunicación de la máquina hacia Arduino para simular variables externas, cómo alto o bajo flujo vehícular, resolviendose de la siguiente manera:
+
+Desde la máquina utilizando python se envian comandos a Arduino y este dependeniendo del valor del comando ejecuta una acción. La carpeta "TrafficSimulator" contiene la lógica de python.
+
+
+
 
 
