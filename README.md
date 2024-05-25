@@ -2,7 +2,9 @@
 
 Este es el repositorio del proyecto final de la materia de **Sistemas Autoadaptables** de la especialización en Desarrollo de Software de la Universidad EAFIT en el año 2024. La materia trata sobre tecnologias relacionadas con IoT y systemas embebidos utilizando Arduino.
 
-El proyecto busca darle funcionalidades a una maqueta que simula una ciudad inteligente o SmartCity como se muestra a continuación:
+El proyecto busca darle funcionalidades a una maqueta que simula una ciudad inteligente o SmartCity.
+
+La maqueta esta configurada de la siguiente manera:
 
 ![SmartCity](smart-city-labels.png)
 
@@ -33,15 +35,18 @@ La ejecución se realiza sobre Arduino en los archivos .ino.
 
 Los casos de uso se definieron en 2 tipos:
 
-1) Alerta: son mensajes sobre cambios en los sensores de la maqueta.
-2) Simulación del control de tráfico: es una simulación sobre cambios en los tiempos que pasan de rojo a verde para los semáforos de la maqueta.
+1) Alerta
 
-Se usaron los elementos de la maqueta para atender dichos tipos de caso de uso de la siguiente manera:
+Son mensajes sobre cambios en los sensores de la maqueta que incluirían:
 
-- Sensores de luz: dependiendo de un límite de medición se encargarían de prender o a pagar las luces de las calles en la ciudad.
-- Botones laterales de los semáforos: simulan abilitación del paro del tráfico cuándo hay personas con discapcidad visual que necesitan pasar la calle.
+- Botones laterales de los semáforos: alerta sobre la solicitud del paro del tráfico cuándo hay personas con discapcidad visual que necesitan pasar la calle.
 - Sensor de CO2: dependiendo de un límite alerta sobre el nivel de contaminación del aire.
 - Sensor de próximidad: alerta sobre el estancamiento del tráfico cuando un cuerpo se aproxima a uno de los sensores.
+
+2) Simulación del control de tráfico y la iluminación
+
+- Semáforos: es una simulación sobre cambios en los tiempos que pasan de rojo a verde para los semáforos de la maqueta.
+- Sensores de luz: dependiendo de un límite de medición se encargarían de prender o a pagar las luces de las calles en la ciudad.
 
 ## Comunicaciones:
 
