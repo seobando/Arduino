@@ -39,7 +39,7 @@ Los casos de uso se definieron en 2 tipos:
 
 Son mensajes sobre cambios en los sensores de la maqueta que incluirían:
 
-- Botones laterales de los semáforos: alerta sobre la solicitud del paro del tráfico cuándo hay personas con discapcidad visual que necesitan pasar la calle.
+- Botones laterales de los semáforos: alerta sobre la solicitud del paro del tráfico cuándo hay personas con discapacidad visual que necesitan pasar la calle.
 - Sensor de CO2: dependiendo de un límite alerta sobre el nivel de contaminación del aire.
 - Sensor de próximidad: alerta sobre el estancamiento del tráfico cuando un cuerpo se aproxima a uno de los sensores.
 
