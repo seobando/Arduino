@@ -16,7 +16,7 @@ El proyecto esta conformado por 3 retos relacionados con los niveles de compleji
 
 3, **Generación 2**: Tienen autoconcienciencia y autoadaptación. Entiende su rol en un sistema de sistemas. Aprende de su propia experiencia y optimiza su comportamiento de acuerdo a ello. La capacidad de autoadaptación le permite cambiar sus settings e incluso introducir cambios estructurales y operacionales en el sistema.
 
-## Desarrollo:
+## Estructura del Proyecto:
 
 La aproximación para darle solución a los retos esta inspirada en un diseño modular, donde toda la lógica esta organizada en 4 módulos programados sobre c++ y cada módulo tiene una responsabilidad específica:
 
@@ -26,6 +26,8 @@ La aproximación para darle solución a los retos esta inspirada en un diseño m
 4) Utils: provee las constantes y el mapeo de los pines que envian y reciben señales de cada elemento de la maqueta.
 
 La ejecución se realiza sobre Arduino en los archivos .ino llamando a las funcionalidades que atienden cada generación.
+
+## Casos de uso identificados:
 
 Los casos de uso se definieron en 2 tipos:
 
