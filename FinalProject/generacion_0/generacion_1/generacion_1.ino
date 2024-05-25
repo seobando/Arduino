@@ -1,11 +1,12 @@
 #include "generacion_2/SmartCity/utils/config.h"
 #include "generacion_2/SmartCity/utils/const.cpp"
 #include "generacion_2/SmartCity/client/sendData.cpp"
+// Components
+#include "generacion_2/SmartCity/components/actuators.cpp"
+#include "generacion_2/SmartCity/components/sensors.cpp"
 // Controllers
-#include "generacion_1/generacion_2/SmartCity/controllers/alerts.cpp"
-#include "generacion_1/generacion_2/SmartCity/controllers/testAlerts.cpp"
-#include "generacion_1/generacion_2/SmartCity/controllers/streetLight.cpp"
-#include "generacion_1/generacion_2/SmartCity/controllers/testStreetLight.cpp"
+#include "generacion_2/SmartCity/controllers/alerts.cpp"
+#include "generacion_2/SmartCity/controllers/streetLight.cpp"
 // Libraries
 #include <Wire.h>               //Library required for I2C comms (LCD)
 #include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
@@ -23,7 +24,7 @@ void displayMessage(String message, int delay_time) {
 }
 
 void runAlerts(){
-  controlAlertPolution();
+  controlAlertPolution(20);
   controlAlertTrafficJam();
   controlAlertTrafficLightStop();
 }
@@ -68,7 +69,7 @@ void setup() {
   // Comunicación
   //Serial.begin(115200);
   Serial.begin(9600);
-  WiFiInit(); // Iniciando la conexión WIFI
+  //WiFiInit(); // Iniciando la conexión WIFI
 }
 
 void loop() {

@@ -5,31 +5,33 @@ double measureLight(int pin) {
   double light_measurement = analogRead(pin);
   Serial.println("Light pin: " + String(pin));
   Serial.println("Light measurement: " + String(light_measurement));
-  return light_measurement
+  return light_measurement;
 }
 
 bool validateProximity(int pin) {
 
-  bool is_anything_there = false
+  bool is_anything_there = false;
 
-    if (digitalRead(pin) == HIGH) {
+  if (digitalRead(pin) == HIGH) {
     Serial.println("P1: ON");
     delay(300);                         //Debouncing for buttons using delay of 300 ms
     while (digitalRead(P1) == HIGH) {}  //Debouncing
   }
 
-  return is_anything_there
+  return is_anything_there;
 }
 
 bool validateButtons(int pin) {
 
-  bool is_button_on = false if (digitalRead(pin) == HIGH) {
+  bool is_button_on = false;
+  if (digitalRead(pin) == HIGH) {
     Serial.println("P1: ON");
-    is_button_on = true delay(300);     //Debouncing for buttons using delay of 300 ms
+    is_button_on = true;
+    delay(300);     //Debouncing for buttons using delay of 300 ms
     while (digitalRead(P1) == HIGH) {}  //Debouncing
   }
 
-  return is_button_on
+  return is_button_on;
 }
 
 
@@ -55,5 +57,5 @@ double measureCO2(int pin) {
     Serial.println("CO2: " + String(co2));
   }
 
-  return co2
+  return co2;
 }
