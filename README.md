@@ -10,7 +10,7 @@ La maqueta esta configurada de la siguiente manera:
 
 ## Objetivos:
 
-El proyecto esta conformado por 3 retos relacionados con los niveles de complejida y estrategia asociados a sistemas autoadaptables.
+El proyecto esta conformado por 3 retos relacionados con los niveles de complejidad y estrategia asociados a sistemas autoadaptables.
 
  El alcance de este proyecto cubre las generaciones que van de la 0 a la 2, como se describe a continuación:
 
