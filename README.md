@@ -1,6 +1,6 @@
 # SmartCity - Arduino
 
-Este es el repository del proyecto final de la materia de **Sistemas Autoadaptables** de la especialización en Desarrollo de Software de la Universidad EAFIT en el año 2024. La materia trata sobre tecnologias relacionadas con IoT y systemas embebidos utilizando Arduino.
+Este es el repositorio del proyecto final de la materia de **Sistemas Autoadaptables** de la especialización en Desarrollo de Software de la Universidad EAFIT en el año 2024. La materia trata sobre tecnologias relacionadas con IoT y systemas embebidos utilizando Arduino.
 
 El proyecto busca darle funcionalidades a una maqueta que simula una ciudad inteligente o SmartCity como se muestra a continuación:
 
