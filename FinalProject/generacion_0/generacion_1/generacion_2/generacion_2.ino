@@ -1,13 +1,13 @@
 #include "SmartCity/utils/config.h"
-#include "utils/const.cpp"
-
+#include "SmartCity/utils/const.cpp"
 // Components
 #include "SmartCity/components/actuators.cpp"
+#include "SmartCity/components/sensors.cpp"
 // Controllers
-#include "SmartCity/controllers/trafficLights.cpp"
-#include "SmartCity/controllers/traffic.cpp"
 #include "SmartCity/controllers/alerts.cpp"
 #include "SmartCity/controllers/streetLight.cpp"
+#include "SmartCity/controllers/trafficLights.cpp"
+#include "SmartCity/controllers/traffic.cpp"
 // Libraries
 #include <Wire.h>               //Library required for I2C comms (LCD)
 #include <LiquidCrystal_I2C.h>  //Library for LCD display via I2C
@@ -25,7 +25,7 @@ void displayMessage(String message, int delay_time) {
 }
 
 void runAlerts(){
-  controlAlertPolution();
+  controlAlertPolution(20);
   controlAlertTrafficJam();
   controlAlertTrafficLightStop();
 }

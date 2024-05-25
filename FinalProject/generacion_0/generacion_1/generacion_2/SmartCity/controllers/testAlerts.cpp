@@ -1,6 +1,6 @@
 void testControlAlerts(){
 
-    controlAlertPolution();
+    controlAlertPolution(20);
     controlAlertTrafficJam();
     controlAlertTrafficLightStop();
         
